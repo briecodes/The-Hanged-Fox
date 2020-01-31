@@ -1,0 +1,11 @@
+button {
+  background-color: #b3a78f;
+  color: #faf6f2;
+  font-size: 1.1em;
+  border: none;
+  padding: 10px 20px;
+  font-family: 'Henny Penny', cursive;
+  border-radius: 20px;
+  cursor: pointer;
+  outline: none;
+}
