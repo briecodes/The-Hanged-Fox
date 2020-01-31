@@ -1,3 +1,22 @@
+div.home-screen {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+}
+
+img.logotype {
+  width: 45vw;
+  position: absolute;
+  top: 22vh;
+  right: 16vw;
+}
+
+img.fox {
+  width: 70vw;
+  margin-top: -7vh;
+  margin-bottom: 10vh;
+}
+
 button {
   background-color: #b3a78f;
   color: #faf6f2;

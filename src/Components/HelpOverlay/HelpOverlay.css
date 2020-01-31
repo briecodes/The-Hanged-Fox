@@ -1,0 +1,18 @@
+div.help-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(130, 183, 189, 0.7);
+}
+
+div.close-overlay {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  background: black;
+}
