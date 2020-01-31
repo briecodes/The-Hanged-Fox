@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       {appProgression === 'home' ? <HomeScreen handleScreen={changeScreen} /> : null}
-      {appProgression === 'game' ? <GameBoard handleScreen={changeScreen} /> : null}
+      {appProgression === 'game' ? <GameBoard goHome={changeScreen} /> : null}
     </div>
   );
 }
