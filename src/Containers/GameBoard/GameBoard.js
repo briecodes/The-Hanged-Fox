@@ -27,6 +27,13 @@ export default function GameBoard(props) {
     };
   };
 
+  function resetGame() {
+    setUsedBank([]);
+    setShowHint(false);
+    setReset(false);
+    incorrect.current = 0;
+  };
+
   return (
     <div className='game-board'>
       <Nav home={() => props.goHome('home')} help={() => setHelpOverlay(true)} />
@@ -39,7 +46,7 @@ export default function GameBoard(props) {
       { 5 <= incorrect.current ? <div>You Lose!!</div> : <LetterBank handleLetterPress={handleLetterPress} word={word} usedBank={usedBank} />}
 
       <div className='hint-container'>
-        { !reset ? <button className='hint' style={{display: showHint ? 'none' : 'unset'}} onClick={() => setShowHint(true)}>Hint</button> : <button className='hint'>Play Again</button> }
+        { !reset ? <button className='hint' style={{display: showHint ? 'none' : 'unset'}} onClick={() => setShowHint(true)}>Hint</button> : <button className='hint' onClick={resetGame}>Play Again</button> }
         { showHint ? <p>{hint}</p> : null }
       </div>
     </div>
