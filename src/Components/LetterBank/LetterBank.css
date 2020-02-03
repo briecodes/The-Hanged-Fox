@@ -21,6 +21,7 @@ div.letter-tile {
   margin: 0 5px 5px;
   border-radius: 10px;
   cursor: pointer;
+  user-select: none;
 }
 
 div.letter-tile.used {

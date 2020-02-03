@@ -14,7 +14,7 @@ export default function MysteryWord(props) {
 
   return (
     <div className='mystery-word-container'>
-      {wordArray().map((l, index) => <div key={index} className='blank-tile' data-letter={l}>{l}</div>)}
+      {wordArray().map((l, index) => <div key={index} className={`blank-tile ${props.tf ? 'uncovered' : null}`} data-letter={l}>{l}</div>)}
     </div>
   );
 };

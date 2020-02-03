@@ -8,6 +8,7 @@ import LetterBank from '../../Components/LetterBank/LetterBank';
 
 export default function GameBoard(props) {
   const [helpOverlay, setHelpOverlay] = useState(true);
+  const word = 'success';
 
   return (
     <div className='game-board'>
@@ -16,7 +17,7 @@ export default function GameBoard(props) {
         <div className='nav-btn home' onClick={() => props.goHome('home')}></div>
         <div className='nav-btn help' onClick={() => setHelpOverlay(true)}></div>
 
-        <MysteryWord word={'success'} />
+        <MysteryWord word={word} />
 
         <LetterBank />
       </div>
