@@ -28,7 +28,7 @@ export default function GameBoard(props) {
     } else {
       if (!correctCount.current) correctCount.current = 0;
       correctCount.current = correctCount.current + 1;
-      if (checkProgress() === correctCount.current) setGameEnd({end: true, won: true});
+      if (wordLength() === correctCount.current) setGameEnd({end: true, won: true});
     };
   };
 
@@ -39,7 +39,7 @@ export default function GameBoard(props) {
     incorrectCount.current = 0;
   };
 
-  function checkProgress() {
+  function wordLength() {
     const arr = word.split('');
     const finalArr = Array.from(new Set(arr));
 
