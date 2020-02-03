@@ -13,7 +13,8 @@ export default function GameBoard(props) {
   const [usedBank, setUsedBank] = useState([]);
   const [showHint, setShowHint] = useState(false);
   const [reset, setReset] = useState(false);
-  const incorrect = useRef();
+  const incorrectCount = useRef();
+  const correctCount = useRef();
   const word = 'success';
   const hint = 'The blood is rare and sweet as cherry wine.';
 
@@ -21,9 +22,13 @@ export default function GameBoard(props) {
     setUsedBank([...usedBank, letter]);
 
     if (!word.includes(letter)) {
-      if (!incorrect.current) incorrect.current = 0;
-      incorrect.current = incorrect.current + 1;
-      if (5 <= incorrect.current) setReset(true);
+      if (!incorrectCount.current) incorrectCount.current = 0;
+      incorrectCount.current = incorrectCount.current + 1;
+      if (5 <= incorrectCount.current) setReset(true);
+    } else {
+      if (!correctCount.current) correctCount.current = 0;
+      correctCount.current = correctCount.current + 1;
+      if (word.length === correctCount.current) setReset(true);
     };
   };
 
@@ -31,7 +36,7 @@ export default function GameBoard(props) {
     setUsedBank([]);
     setShowHint(false);
     setReset(false);
-    incorrect.current = 0;
+    incorrectCount.current = 0;
   };
 
   return (
@@ -40,10 +45,10 @@ export default function GameBoard(props) {
 
       {helpOverlay ? <HelpOverlay closeOverlay={setHelpOverlay} /> : null}
 
-      <HangedFox stage={incorrect.current} />
+      <HangedFox stage={incorrectCount.current} />
       <MysteryWord word={word} usedBank={usedBank} />
       
-      { 5 <= incorrect.current ? <div>You Lose!!</div> : <LetterBank handleLetterPress={handleLetterPress} word={word} usedBank={usedBank} />}
+      { 5 <= incorrectCount.current ? <div>You Lose!!</div> : <LetterBank handleLetterPress={handleLetterPress} word={word} usedBank={usedBank} />}
 
       <div className='hint-container'>
         { !reset ? <button className='hint' style={{display: showHint ? 'none' : 'unset'}} onClick={() => setShowHint(true)}>Hint</button> : <button className='hint' onClick={resetGame}>Play Again</button> }
