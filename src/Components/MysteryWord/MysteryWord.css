@@ -1,0 +1,17 @@
+div.mystery-word-container {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  position: absolute;
+  left: 10%;
+  bottom: 40%;
+}
+
+div.blank-tile {
+  background: rgba(232, 217, 188, 0.2);
+  border-bottom: 10px solid rgba(205, 103, 91, 0.45);
+  padding: 10px 15px;
+  align-self: center;
+  font-size: 100%;
+  color: #cd675b;
+}

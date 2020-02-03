@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import './GameBoard.css';
 
 import HelpOverlay from '../../Components/HelpOverlay/HelpOverlay';
+import MysteryWord from '../../Components/MysteryWord/MysteryWord';
 import LetterBank from '../../Components/LetterBank/LetterBank';
 
 export default function GameBoard(props) {
@@ -14,6 +15,8 @@ export default function GameBoard(props) {
       <div className='nav'>
         <div className='nav-btn home' onClick={() => props.goHome('home')}></div>
         <div className='nav-btn help' onClick={() => setHelpOverlay(true)}></div>
+
+        <MysteryWord word={'success'} />
 
         <LetterBank />
       </div>
