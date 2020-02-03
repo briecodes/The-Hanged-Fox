@@ -3,31 +3,6 @@ div.game-board {
   height: 90vh;
 }
 
-div.nav-btn {
-  width: 34px;
-  height: 34px;
-  background-color: #b3a78f;
-  cursor: pointer;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 50%;
-  position: absolute;
-  left: 20px;
-  outline: none;
-}
-
-div.nav-btn.home {
-  background-image: url(../../Assets/Images/home-icon.png);
-  background-size: 45%;
-  top: 20px;
-}
-
-div.nav-btn.help {
-  background-image: url(../../Assets/Images/help-icon.png);
-  background-size: 25%;
-  top: 65px;
-}
-
 div.hint-container {
   position: absolute;
   bottom: 20px;
