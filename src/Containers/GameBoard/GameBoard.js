@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import './GameBoard.css';
 
 import HelpOverlay from '../../Components/HelpOverlay/HelpOverlay';
+import LetterBank from '../../Components/LetterBank/LetterBank';
 
 export default function GameBoard(props) {
   const [helpOverlay, setHelpOverlay] = useState(true);
@@ -13,6 +14,8 @@ export default function GameBoard(props) {
       <div className='nav'>
         <div className='nav-btn home' onClick={() => props.goHome('home')}></div>
         <div className='nav-btn help' onClick={() => setHelpOverlay(true)}></div>
+
+        <LetterBank />
       </div>
     </div>
   );
