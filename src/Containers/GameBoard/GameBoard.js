@@ -39,8 +39,8 @@ export default function GameBoard(props) {
       { 5 <= incorrect.current ? <div>You Lose!!</div> : <LetterBank handleLetterPress={handleLetterPress} word={word} usedBank={usedBank} />}
 
       <div className='hint-container'>
-        { !showHint ? <button className='hint' onClick={() => setShowHint(true)}>Hint</button> : <p>{hint}</p>}
-        { reset ? <button className='hint'>Play Again</button> : null}
+        { !reset ? <button className='hint' style={{display: showHint ? 'none' : 'unset'}} onClick={() => setShowHint(true)}>Hint</button> : <button className='hint'>Play Again</button> }
+        { showHint ? <p>{hint}</p> : null }
       </div>
     </div>
   );
