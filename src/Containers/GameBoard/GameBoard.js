@@ -3,6 +3,7 @@ import React, {useState, useRef} from 'react';
 import './GameBoard.css';
 
 import HelpOverlay from '../../Components/HelpOverlay/HelpOverlay';
+import HangedFox from '../../Components/HangedFox/HangedFox';
 import MysteryWord from '../../Components/MysteryWord/MysteryWord';
 import LetterBank from '../../Components/LetterBank/LetterBank';
 
@@ -34,6 +35,7 @@ export default function GameBoard(props) {
       </div>
 
       {helpOverlay ? <HelpOverlay closeOverlay={setHelpOverlay} /> : null}
+      <HangedFox />
       <MysteryWord word={word} usedBank={usedBank} />
       { word.length <= incorrect.current ? <div>You Lose!!</div> : <LetterBank handleLetterPress={handleLetterPress} word={word} usedBank={usedBank} />}
     </div>
