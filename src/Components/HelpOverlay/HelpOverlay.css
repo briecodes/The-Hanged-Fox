@@ -24,17 +24,17 @@ div.close-overlay {
   background-size: 45%;
 }
 
-img {
+div.help-overlay img {
   width: 90%;
   position: absolute;
 }
 
-img:first-of-type {
+div.help-overlay img:first-of-type {
   top: 10px;
   left: 10px;
 }
 
-img:last-of-type {
+div.help-overlay img:last-of-type {
   bottom: 20px;
   left: 5%;
 }

@@ -13,6 +13,7 @@ div.nav-btn {
   border-radius: 50%;
   position: absolute;
   left: 20px;
+  outline: none;
 }
 
 div.nav-btn.home {
