@@ -37,9 +37,9 @@ export default function GameBoard(props) {
       </div>
 
       {helpOverlay ? <HelpOverlay closeOverlay={setHelpOverlay} /> : null}
-      <HangedFox />
+      <HangedFox stage={incorrect.current} />
       <MysteryWord word={word} usedBank={usedBank} />
-      { word.length <= incorrect.current ? <div>You Lose!!</div> : <LetterBank handleLetterPress={handleLetterPress} word={word} usedBank={usedBank} />}
+      { 5 <= incorrect.current ? <div>You Lose!!</div> : <LetterBank handleLetterPress={handleLetterPress} word={word} usedBank={usedBank} />}
 
       <div className='hint-container'>
         { !showHint ? <button className='hint' onClick={() => setShowHint(true)}>Hint</button> : <p>{hint}</p>}

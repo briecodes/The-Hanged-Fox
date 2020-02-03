@@ -1,6 +1,34 @@
 div.hanged-fox-container {
-  width: 70%;
-  height: 52%;
-  background: pink;
+  width: 65%;
+  height: 60%;
   margin: 0 auto;
+  transition: all 0.5s;
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position-x: center;
+  background-position-y: bottom;
+}
+
+div.hanged-fox-container.stage0 {
+  background-image: url(../../Assets/Images/fox-animation_00.png);
+}
+
+div.hanged-fox-container.stage1 {
+  background-image: url(../../Assets/Images/fox-animation_01.png);
+}
+
+div.hanged-fox-container.stage2 {
+  background-image: url(../../Assets/Images/fox-animation_02.png);
+}
+
+div.hanged-fox-container.stage3 {
+  background-image: url(../../Assets/Images/fox-animation_03.png);
+}
+
+div.hanged-fox-container.stage4 {
+  background-image: url(../../Assets/Images/fox-animation_04.png);
+}
+
+div.hanged-fox-container.stage5 {
+  background-image: url(../../Assets/Images/fox-animation_05.png);
 }

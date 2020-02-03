@@ -3,7 +3,7 @@ div.letter-bank {
   justify-content: center;
   flex-wrap: wrap;
   position: absolute;
-  width: 100vw;
+  width: 100%;
   left: 0;
   bottom: 75px;
 }
@@ -12,12 +12,10 @@ div.letter-tile {
   color: #ffffff;
   font-size: 100%;
   background: #82b7bd;
-  padding: 0 5px;
+  padding: 8px 5px;
   text-align: center;
   align-self: center;
   width: 6%;
-  height: 30px;
-  padding-top: 25px;
   margin: 0 5px 5px;
   border-radius: 10px;
   cursor: pointer;
