@@ -10,9 +10,11 @@ import LetterBank from '../../Components/LetterBank/LetterBank';
 export default function GameBoard(props) {
   const [helpOverlay, setHelpOverlay] = useState(true);
   const [usedBank, setUsedBank] = useState([]);
+  const [showHint, setShowHint] = useState(false);
   const incorrect = useRef();
   const tries = useRef();
   const word = 'success';
+  const hint = 'The blood is rare and sweet as cherry wine.';
 
   function handleLetterPress(letter) {
     setUsedBank([...usedBank, letter]);
@@ -38,6 +40,10 @@ export default function GameBoard(props) {
       <HangedFox />
       <MysteryWord word={word} usedBank={usedBank} />
       { word.length <= incorrect.current ? <div>You Lose!!</div> : <LetterBank handleLetterPress={handleLetterPress} word={word} usedBank={usedBank} />}
+
+      <div className='hint-container'>
+        { !showHint ? <button className='hint' onClick={() => setShowHint(true)}>Hint</button> : <p>{hint}</p>}
+      </div>
     </div>
   );
 };
