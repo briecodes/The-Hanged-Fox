@@ -9,7 +9,8 @@ div.mystery-word-container {
 
 div.blank-tile {
   background: rgba(232, 217, 188, 0.2);
-  border-bottom: 10px solid rgba(205, 103, 91, 0.45);
+  /* border-bottom: 5px solid rgba(205, 103, 91, 0.45); */
+  border-bottom: 5px solid rgba(0, 0, 0, 0.3);
   padding: 10px 15px;
   align-self: center;
   font-size: 100%;
@@ -19,4 +20,5 @@ div.blank-tile {
 
 div.blank-tile.uncovered {
   color: #cd675b;
+  border-bottom: 5px solid rgba(159, 188, 152, 0.45);
 }
