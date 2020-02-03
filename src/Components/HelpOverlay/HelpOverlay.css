@@ -11,9 +11,15 @@ div.help-overlay {
 div.close-overlay {
   width: 25px;
   height: 25px;
+  border-radius: 50%;
   position: absolute;
   top: 15px;
   right: 15px;
   cursor: pointer;
-  background: black;
+  background: #b3a78f;
+  border: 1px solid #ffffff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../../Assets/Images/close-icon.svg);
+  background-size: 45%;
 }
