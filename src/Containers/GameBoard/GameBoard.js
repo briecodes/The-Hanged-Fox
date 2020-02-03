@@ -12,7 +12,7 @@ export default function GameBoard(props) {
   const [helpOverlay, setHelpOverlay] = useState(true);
   const [usedBank, setUsedBank] = useState([]);
   const [showHint, setShowHint] = useState(false);
-  const [reset, setReset] = useState(false);
+  const [gameEnd, setGameEnd] = useState({end: false, won: null});
   const incorrectCount = useRef();
   const correctCount = useRef();
   const word = 'success';
@@ -24,19 +24,26 @@ export default function GameBoard(props) {
     if (!word.includes(letter)) {
       if (!incorrectCount.current) incorrectCount.current = 0;
       incorrectCount.current = incorrectCount.current + 1;
-      if (5 <= incorrectCount.current) setReset(true);
+      if (5 <= incorrectCount.current) setGameEnd({end: true, won: false});
     } else {
       if (!correctCount.current) correctCount.current = 0;
       correctCount.current = correctCount.current + 1;
-      if (word.length === correctCount.current) setReset(true);
+      if (checkProgress() === correctCount.current) setGameEnd({end: true, won: true});
     };
   };
 
   function resetGame() {
     setUsedBank([]);
     setShowHint(false);
-    setReset(false);
+    setGameEnd({end: false, won: null});
     incorrectCount.current = 0;
+  };
+
+  function checkProgress() {
+    const arr = word.split('');
+    const finalArr = Array.from(new Set(arr));
+
+    return finalArr.length;
   };
 
   return (
@@ -48,10 +55,12 @@ export default function GameBoard(props) {
       <HangedFox stage={incorrectCount.current} />
       <MysteryWord word={word} usedBank={usedBank} />
       
-      { 5 <= incorrectCount.current ? <div>You Lose!!</div> : <LetterBank handleLetterPress={handleLetterPress} word={word} usedBank={usedBank} />}
+      { gameEnd.end && !gameEnd.won ? <div>You Lose!!</div> : null}
+      { gameEnd.won ? <p>Congrats!</p> : null }
+      { !gameEnd.end ? <LetterBank handleLetterPress={handleLetterPress} word={word} usedBank={usedBank} /> : null}
 
       <div className='hint-container'>
-        { !reset ? <button className='hint' style={{display: showHint ? 'none' : 'unset'}} onClick={() => setShowHint(true)}>Hint</button> : <button className='hint' onClick={resetGame}>Play Again</button> }
+        { !gameEnd.end ? <button className='hint' style={{display: showHint ? 'none' : 'unset'}} onClick={() => setShowHint(true)}>Hint</button> : <button className='hint' onClick={resetGame}>Play Again</button> }
         { showHint ? <p>{hint}</p> : null }
       </div>
     </div>
