@@ -8,7 +8,16 @@ import LetterBank from '../../Components/LetterBank/LetterBank';
 
 export default function GameBoard(props) {
   const [helpOverlay, setHelpOverlay] = useState(true);
+  const [usedBank, setUsedBank] = useState([]);
   const word = 'success';
+
+  function handleLetterPress(letter) {
+    const exists = usedBank.find( (l) => l === letter);
+
+    if (!exists) {
+      setUsedBank([...usedBank, letter]);
+    };
+  };
 
   return (
     <div className='game-board'>
@@ -17,9 +26,9 @@ export default function GameBoard(props) {
         <div className='nav-btn home' onClick={() => props.goHome('home')}></div>
         <div className='nav-btn help' onClick={() => setHelpOverlay(true)}></div>
 
-        <MysteryWord word={word} />
+        <MysteryWord word={word} usedBank={usedBank} />
 
-        <LetterBank />
+        <LetterBank handleLetterPress={handleLetterPress} word={word} usedBank={usedBank} />
       </div>
     </div>
   );
