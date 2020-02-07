@@ -15,6 +15,7 @@ div.hint-container {
   left: 0; */
   width: 100%;
   text-align: center;
+  margin-bottom: 2%;
 }
 
 div.hint-container p {

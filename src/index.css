@@ -12,7 +12,7 @@ html, body {
 body {
   background: url(./Assets/Images/bg-texture.png);
   font-family: 'Henny Penny', cursive;
-  height: 88vh;
+  height: 85vh;
   overflow: hidden;
   position: relative;
 }
