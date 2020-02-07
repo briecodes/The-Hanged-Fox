@@ -4,7 +4,7 @@ div.help-overlay {
   left: 0;
   z-index: 100;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: rgba(130, 183, 189, 0.7);
 }
 
@@ -35,6 +35,6 @@ div.help-overlay img:first-of-type {
 }
 
 div.help-overlay img:last-of-type {
-  bottom: 2%;
+  bottom: 16.5%;
   left: 5%;
 }
