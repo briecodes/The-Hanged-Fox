@@ -1,3 +1,7 @@
+div.nav {
+  position: absolute;
+}
+
 div.nav-btn {
   width: 34px;
   height: 34px;

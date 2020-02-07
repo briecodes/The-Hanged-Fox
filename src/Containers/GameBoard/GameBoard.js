@@ -55,8 +55,8 @@ export default function GameBoard(props) {
       <HangedFox stage={incorrectCount.current} />
       <MysteryWord word={word} usedBank={usedBank} />
       
-      { gameEnd.end && !gameEnd.won ? <div>You Lose!!</div> : null}
-      { gameEnd.won ? <p>Congrats!</p> : null }
+      { gameEnd.end && !gameEnd.won ? <div className='endgame-message'>You Lose!!</div> : null}
+      { gameEnd.won ? <div className='endgame-message'>Congrats!</div> : null }
       { !gameEnd.end ? <LetterBank handleLetterPress={handleLetterPress} word={word} usedBank={usedBank} /> : null}
 
       <div className='hint-container'>

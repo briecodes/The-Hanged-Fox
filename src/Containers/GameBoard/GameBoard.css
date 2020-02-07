@@ -1,12 +1,18 @@
 div.game-board {
   width: 100%;
-  height: 90vh;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 div.hint-container {
-  position: absolute;
+  /* position: absolute;
   bottom: 20px;
-  left: 0;
+  left: 0; */
   width: 100%;
   text-align: center;
 }
