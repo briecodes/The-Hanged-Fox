@@ -9,6 +9,12 @@ div.hanged-fox-container {
   background-position-y: bottom;
 }
 
+div.hanged-fox-container.hide {
+  opacity: 0;
+  position: absolute;
+  left: 24%;
+}
+
 div.hanged-fox-container.stage0 {
   background-image: url(../../Assets/Images/fox-animation_00.png);
 }
