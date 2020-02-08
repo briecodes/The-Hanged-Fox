@@ -1,14 +1,15 @@
 import React from 'react';
 
 import './HomeScreen.css';
-import fox from '../../Assets/Images/hanged-fox-homepage.png';
-import logotype from '../../Assets/Images/logotype.svg';
+// import fox from '../../Assets/Images/hanged-fox-homepage.png';
+import fox from '../../Assets/Images/fox.svg';
+import logotype from '../../Assets/Images/logo-lockup.svg';
 
 export default function HomeScreen(props) {
   return (
     <div className='home-screen'>
       <img className='logotype' src={logotype} alt='The Hanged Fox logotype' />
-      <img className='fox' src={fox} alt='Fox graphic' />
+      <embed className='fox' src={fox} />
       <button onClick={() => props.handleScreen('game')}>Start Game</button>
     </div>
   );
