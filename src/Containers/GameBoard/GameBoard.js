@@ -8,6 +8,7 @@ import HangedFox from '../../Components/HangedFox/HangedFox';
 import MysteryWord from '../../Components/MysteryWord/MysteryWord';
 import LetterBank from '../../Components/LetterBank/LetterBank';
 import HintOverlay from '../../Components/HintOverlay/HintOverlay';
+import Tries from '../../Components/Tries/Tries';
 
 export default function GameBoard(props) {
   const [helpOverlay, setHelpOverlay] = useState(false);
@@ -55,6 +56,7 @@ export default function GameBoard(props) {
   return (
     <div className='game-board'>
       <Nav home={() => props.goHome('home')} help={() => setHelpOverlay(true)} />
+      <Tries tries={incorrectCount.current} />
 
       {helpOverlay || props.showInstructions ? <HelpOverlay closeOverlay={handleHelpOverlay} /> : null}
 

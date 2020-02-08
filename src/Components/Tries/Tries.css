@@ -1,0 +1,35 @@
+div.tries-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 11px 15px 0;
+  background: rgba(232, 217, 188, 0.2);
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  text-align: center;
+  line-height: 1.4;
+  border-radius: 15px;
+  border: 1px solid transparent;
+  transition: all 0.35s;
+}
+
+div.tries-container.warning {
+  border: 1px solid rgba(205, 103, 91, 0.35);
+}
+
+.tries-heading {
+  display: block;
+  color: #b3a78f;
+  font-size: 15px;
+}
+
+.tries-number {
+  font-size: 24px;
+  color: #b3a78f;
+  transition: all 0.35s;
+}
+
+.warning .tries-number {
+  color: #cd675b;
+}
