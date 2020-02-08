@@ -6,6 +6,7 @@ import GameBoard from '../GameBoard/GameBoard';
 
 function App() {
   const [appProgression, setAppProgression] = useState('home');
+  const [showInstructions, setShowInstructions] = useState(true);
 
   function changeScreen(n) {
     setAppProgression(n);
@@ -14,7 +15,7 @@ function App() {
   return (
     <div className="App">
       {appProgression === 'home' ? <HomeScreen handleScreen={changeScreen} /> : null}
-      {appProgression === 'game' ? <GameBoard goHome={changeScreen} /> : null}
+      {appProgression === 'game' ? <GameBoard goHome={changeScreen} showInstructions={showInstructions} setShowInstructions={setShowInstructions} /> : null}
     </div>
   );
 }

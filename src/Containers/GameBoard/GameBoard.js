@@ -9,7 +9,7 @@ import MysteryWord from '../../Components/MysteryWord/MysteryWord';
 import LetterBank from '../../Components/LetterBank/LetterBank';
 
 export default function GameBoard(props) {
-  const [helpOverlay, setHelpOverlay] = useState(true);
+  const [helpOverlay, setHelpOverlay] = useState(false);
   const [usedBank, setUsedBank] = useState([]);
   const [showHint, setShowHint] = useState(false);
   const [gameEnd, setGameEnd] = useState({end: false, won: null});
@@ -46,11 +46,16 @@ export default function GameBoard(props) {
     return finalArr.length;
   };
 
+  function handleHelpOverlay() {
+    props.setShowInstructions(false);
+    setHelpOverlay(!helpOverlay);
+  };
+
   return (
     <div className='game-board'>
       <Nav home={() => props.goHome('home')} help={() => setHelpOverlay(true)} />
 
-      {helpOverlay ? <HelpOverlay closeOverlay={setHelpOverlay} /> : null}
+      {helpOverlay || props.showInstructions ? <HelpOverlay closeOverlay={handleHelpOverlay} /> : null}
 
       <HangedFox stage={incorrectCount.current} />
       <MysteryWord word={word} usedBank={usedBank} />
