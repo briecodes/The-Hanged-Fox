@@ -18,6 +18,7 @@ div.letter-tile {
   border-radius: 10px;
   cursor: pointer;
   user-select: none;
+  transition: all 0.125s;
 }
 
 div.letter-tile.used {
