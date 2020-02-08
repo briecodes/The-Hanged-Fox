@@ -10,9 +10,6 @@ div.game-board {
 }
 
 div.hint-container {
-  /* position: absolute;
-  bottom: 20px;
-  left: 0; */
   width: 100%;
   text-align: center;
   margin-bottom: 2%;
