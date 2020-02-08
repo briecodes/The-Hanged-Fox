@@ -1,20 +1,23 @@
 div.home-screen {
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  position: absolute;
   text-align: center;
+  background: rgba(255, 255, 255, 0.75);
 }
 
 img.logotype {
   width: 45vw;
   position: absolute;
-  top: 22vh;
-  right: 16vw;
+  top: 10%;
+  right: 24%;
+  z-index: 0;
 }
 
-img.fox {
-  width: 70vw;
-  margin-top: -7vh;
-  margin-bottom: 10vh;
+embed.fox {
+  width: 87%;
+  z-index: 1;
+  margin: 35% auto 3%;
 }
 
 button {
@@ -27,4 +30,15 @@ button {
   border-radius: 20px;
   cursor: pointer;
   outline: none;
+}
+
+div.home-screen p {
+  color: #cd675b;
+  padding: 0;
+  margin: 0 0 11%;
+}
+
+div.home-screen button {
+  position: relative;
+  margin: 0 auto;
 }
