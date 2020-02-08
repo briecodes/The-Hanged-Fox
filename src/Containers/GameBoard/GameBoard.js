@@ -58,7 +58,8 @@ export default function GameBoard(props) {
       <Nav home={() => props.goHome('home')} help={() => setHelpOverlay(true)} />
       <Tries tries={incorrectCount.current} />
 
-      {helpOverlay || props.showInstructions ? <HelpOverlay closeOverlay={handleHelpOverlay} /> : null}
+      {/* {helpOverlay || props.showInstructions ? <HelpOverlay closeOverlay={handleHelpOverlay} /> : null} */}
+      <HelpOverlay closeOverlay={handleHelpOverlay} showOverlay={helpOverlay || props.showInstructions} />
 
       <HangedFox stage={incorrectCount.current} />
       <MysteryWord word={word} usedBank={usedBank} />
@@ -68,8 +69,8 @@ export default function GameBoard(props) {
       { !gameEnd.end ? <LetterBank handleLetterPress={handleLetterPress} word={word} usedBank={usedBank} /> : null}
 
       <div className='hint-container'>
-        { !gameEnd.end ? <button className='hint' style={{display: showHint ? 'none' : 'unset'}} onClick={() => setShowHint(true)}>Hint</button> : <button className='hint' onClick={resetGame}>Play Again</button> }
-        { showHint ? <HintOverlay hint={hint} closeHandler={() => setShowHint(false)} /> : null }
+        { !gameEnd.end ? <button className='hint' onClick={() => setShowHint(true)}>Hint</button> : <button className='hint' onClick={resetGame}>Play Again</button> }
+        <HintOverlay hint={hint} closeHandler={() => setShowHint(false)} showHint={showHint} />
       </div>
     </div>
   );

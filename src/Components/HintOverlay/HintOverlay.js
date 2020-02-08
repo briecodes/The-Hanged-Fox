@@ -5,7 +5,7 @@ import './HintOverlay.css';
 export default function HintOverlay(props) {
 
   return (
-    <div className='hint-overlay-container' onClick={props.closeHandler}>
+    <div className={`hint-overlay-container ${props.showHint ? '' : 'hide'}`} onClick={props.closeHandler}>
       <div className='close-overlay'></div>
       <div className='hint-close'></div>
       <div className='hint'>
