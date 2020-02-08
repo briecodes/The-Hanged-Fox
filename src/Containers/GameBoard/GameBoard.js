@@ -7,6 +7,7 @@ import Nav from '../../Components/Nav/Nav';
 import HangedFox from '../../Components/HangedFox/HangedFox';
 import MysteryWord from '../../Components/MysteryWord/MysteryWord';
 import LetterBank from '../../Components/LetterBank/LetterBank';
+import HintOverlay from '../../Components/HintOverlay/HintOverlay';
 
 export default function GameBoard(props) {
   const [helpOverlay, setHelpOverlay] = useState(false);
@@ -66,7 +67,7 @@ export default function GameBoard(props) {
 
       <div className='hint-container'>
         { !gameEnd.end ? <button className='hint' style={{display: showHint ? 'none' : 'unset'}} onClick={() => setShowHint(true)}>Hint</button> : <button className='hint' onClick={resetGame}>Play Again</button> }
-        { showHint ? <p>{hint}</p> : null }
+        { showHint ? <HintOverlay hint={hint} closeHandler={() => setShowHint(false)} /> : null }
       </div>
     </div>
   );

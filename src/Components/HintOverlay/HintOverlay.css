@@ -1,0 +1,41 @@
+div.hint-overlay-container {
+  background-color: rgba(188, 216, 219, 0.75);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+div.hint-close {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  background: #b3a78f;
+  border: 1px solid #ffffff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../../Assets/Images/close-icon.svg);
+  background-size: 45%;
+}
+
+div.hint {
+  align-self: center;
+  background: #faf6f2;
+  width: 75%;
+  padding: 25px 25px;
+  font-size: 1.2em;
+  border-radius: 25px;
+}
+
+div.hint h3 {
+  padding: 0;
+  margin: 0;
+  font-size: 1.5em;
+}

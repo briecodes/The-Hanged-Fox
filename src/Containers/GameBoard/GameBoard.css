@@ -23,3 +23,8 @@ div.hint-container p {
   margin: 0;
   font-size: 1.2em;
 }
+
+div.endgame-message {
+  text-align: center;
+  font-size: 3.5em;
+}
