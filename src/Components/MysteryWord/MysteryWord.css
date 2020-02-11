@@ -19,6 +19,11 @@ div.blank-tile {
 }
 
 div.blank-tile.uncovered {
-  color: #cd675b;
+  color: rgb(105, 151, 93);
   border-bottom: 5px solid rgba(159, 188, 152, 0.45);
+}
+
+div.blank-tile.not-found {
+  color: #cd675b;
+  border-bottom: 5px solid rgba(205, 103, 91, 0.45);
 }

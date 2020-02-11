@@ -102,7 +102,7 @@ export default function GameBoard(props) {
       <HelpOverlay closeOverlay={handleHelpOverlay} showOverlay={helpOverlay || props.showInstructions} />
 
       <HangedFox stage={incorrectCount.current} />
-      {gameWord ? <MysteryWord word={gameWord.word} usedBank={usedBank} /> : null}
+      {gameWord ? <MysteryWord word={gameWord.word} usedBank={usedBank} gameStatus={gameEnd} /> : null}
       
       { gameEnd.end && !gameEnd.won ? <div className='endgame-message'>You Lose!!</div> : null}
       { gameEnd.won ? <div className='endgame-message'>Congrats!</div> : null }
