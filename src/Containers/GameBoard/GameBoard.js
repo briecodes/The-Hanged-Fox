@@ -15,6 +15,7 @@ export default function GameBoard(props) {
   const [usedBank, setUsedBank] = useState([]);
   const [showHint, setShowHint] = useState(false);
   const [gameEnd, setGameEnd] = useState({end: false, won: null});
+  const [gameWord, setGameWord] = useState({word: undefined, hint: undefined});
   const incorrectCount = useRef();
   const correctCount = useRef();
   const word = useRef();
@@ -45,7 +46,8 @@ export default function GameBoard(props) {
     setShowHint(false);
     setGameEnd({end: false, won: null});
     incorrectCount.current = 0;
-    correctCount.current.current = 0;
+    correctCount.current = 0;
+    setGameWord({word: undefined, hint: undefined});
     fetchWordApi();
   };
 
@@ -71,11 +73,24 @@ export default function GameBoard(props) {
     })
     .then( response => response.json() )
     .then(res => {
+      if (res.word.length > 12) {
+        console.log('word is too long. ', res.word.length);
+        fetchWordApi();
+        return;
+      };
+
       word.current = res.word;
-      hint.current = res.results[0].definition;
+      if (res.results) {
+        hint.current = res.results[0].definition;
+        setGameWord({word: res.word, hint: res.results[0].definition});
+      } else {
+        hint.current = 'No hint for you!!';
+        setGameWord({word: res.word, hint: 'No hint for you!!'});
+      };
+      
     })
     .catch(err => {
-      console.log('error: ', err);
+      console.log('fetch error: ', err);
     });
   };
 
@@ -87,11 +102,11 @@ export default function GameBoard(props) {
       <HelpOverlay closeOverlay={handleHelpOverlay} showOverlay={helpOverlay || props.showInstructions} />
 
       <HangedFox stage={incorrectCount.current} />
-      {word.current ? <MysteryWord word={word.current} usedBank={usedBank} /> : null}
+      {gameWord ? <MysteryWord word={gameWord.word} usedBank={usedBank} /> : null}
       
       { gameEnd.end && !gameEnd.won ? <div className='endgame-message'>You Lose!!</div> : null}
       { gameEnd.won ? <div className='endgame-message'>Congrats!</div> : null }
-      { !gameEnd.end && word.current ? <LetterBank handleLetterPress={handleLetterPress} word={word.current} usedBank={usedBank} /> : null}
+      { !gameEnd.end && gameWord ? <LetterBank handleLetterPress={handleLetterPress} word={gameWord.word} usedBank={usedBank} /> : null}
 
       <div className='hint-container'>
         { !gameEnd.end ? <button className='hint' onClick={() => setShowHint(true)}>Hint</button> : <button className='hint' onClick={resetGame}>Play Again</button> }

@@ -19,7 +19,7 @@ export default function MysteryWord(props) {
 
   return (
     <div className='mystery-word-container'>
-      {wordArray().map((l, index) => <div key={index} className={`blank-tile ${checkLetter(l) ? 'uncovered' : null}`} data-letter={l}>{l}</div>)}
+      {props.word ? wordArray().map((l, index) => <div key={index} className={`blank-tile ${checkLetter(l) ? 'uncovered' : null}`} data-letter={l}>{l}</div>) : null}
     </div>
   );
 };

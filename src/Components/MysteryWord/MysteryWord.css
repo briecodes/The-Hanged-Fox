@@ -3,6 +3,8 @@ div.mystery-word-container {
   justify-content: space-between;
   width: 85%;
   margin: 5% auto;
+  overflow: hidden;
+  height: 9.5%;
 }
 
 div.blank-tile {
