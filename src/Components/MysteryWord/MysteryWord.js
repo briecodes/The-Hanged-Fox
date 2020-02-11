@@ -19,7 +19,15 @@ export default function MysteryWord(props) {
 
   return (
     <div className='mystery-word-container'>
-      {props.word ? wordArray().map((l, index) => <div key={index} className={`blank-tile ${checkLetter(l) ? 'uncovered' : props.gameStatus.end ? 'not-found' : null}`} data-letter={l}>{l}</div>) : null}
+      {props.word ? wordArray().map((l, index) => 
+        <div
+          key={index}
+          data-letter={l}
+          className={`${l === ' ' || l === '-' ? 'dash-tile' : 'blank-tile'} ${checkLetter(l) ? 'uncovered' : props.gameStatus.end ? 'not-found' : ''}`}
+        >
+            {l}
+        </div>)
+      : null}
     </div>
   );
 };

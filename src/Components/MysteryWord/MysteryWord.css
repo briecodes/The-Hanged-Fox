@@ -18,6 +18,14 @@ div.blank-tile {
   transition: all 0.125s;
 }
 
+div.dash-tile {
+  padding: 10px 2%;
+  align-self: center;
+  font-size: 100%;
+  color: rgba(232, 217, 188, 0.5);
+  user-select: none;
+}
+
 div.blank-tile.uncovered {
   color: rgb(105, 151, 93);
   border-bottom: 5px solid rgba(159, 188, 152, 0.45);

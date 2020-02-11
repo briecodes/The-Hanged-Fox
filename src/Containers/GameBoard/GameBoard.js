@@ -20,8 +20,6 @@ export default function GameBoard(props) {
   const correctCount = useRef();
   const word = useRef();
   const hint = useRef();
-  // const word = 'success';
-  // const hint = 'The blood is rare and sweet as cherry wine.';
 
   useEffect(() => {
     fetchWordApi();
@@ -74,7 +72,6 @@ export default function GameBoard(props) {
     .then( response => response.json() )
     .then(res => {
       if (res.word.length > 12) {
-        console.log('word is too long. ', res.word.length);
         fetchWordApi();
         return;
       };
