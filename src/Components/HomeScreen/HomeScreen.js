@@ -11,6 +11,10 @@ export default function HomeScreen(props) {
       <embed className='fox' src={fox} />
       <p>
         a hangman game
+        <span className='mobile-message'>
+          <br />
+          <em>for the best experience, please load on a mobile device.</em>
+        </span>
       </p>
       <button onClick={() => props.handleScreen('game')}>Start</button>
     </div>
